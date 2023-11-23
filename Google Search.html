@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Google Search</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #f1f1f1;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 20px;
+    }
+
+    nav ul li {
+      margin-right: 10px;
+    }
+
+    section {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+    }
+
+    .search-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .search-container input[type="text"] {
+      width: 300px;
+      padding: 8px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+
+    .search-container input[type="submit"] {
+      padding: 8px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4285f4;
+      color: white;
+      cursor: pointer;
+    }
+
+    .feeling-lucky {
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showGoogleSearch()">Google Search</a></li>
+      <li><a href="#" onclick="showImageSearch()">Image Search</a></li>
+      <li><a href="#" onclick="showAdvancedSearch()">Advanced Search</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Google Search Page -->
+<section id="googleSearchPage">
+  <form action="https://google.com/search" class="search-container">
+    <input type="text" name="q" placeholder="Enter your search">
+    <input type="submit" value="Google Search">
+    <a href="https://www.google.com/search?q=&btnI" class="feeling-lucky">I'm Feeling Lucky</a>
+  </form>
+</section>
+
+<!-- Сторінка пошуку зображень -->
+<section id="imageSearchPage">
+  <form id="imageSearchForm" action="https://google.com/images" class="search-container">
+    <input type="text" name="q" placeholder="Введіть пошук зображень">
+    <input type="submit" value="Пошук зображень">
+  </form>
+</section>
+
+
+<!-- Advanced Search Page -->
+<section id="advancedSearchPage">
+  <form action="https://www.google.com/advanced_search" class="search-container">
+    <input type="text" name="q" placeholder="Enter advanced search">
+    <input type="submit" value="Advanced Search">
+  </form>
+</section>
+
+<script>
+  function showGoogleSearch() {
+    hideAllSections();
+    document.getElementById("googleSearchPage").style.display = "block";
+  }
+
+  function showImageSearch() {
+    hideAllSections();
+    document.getElementById("imageSearchPage").style.display = "block";
+  }
+
+  function showAdvancedSearch() {
+    hideAllSections();
+    document.getElementById("advancedSearchPage").style.display = "block";
+  }
+
+  function hideAllSections() {
+    document.getElementById("googleSearchPage").style.display = "none";
+    document.getElementById("imageSearchPage").style.display = "none";
+    document.getElementById("advancedSearchPage").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
